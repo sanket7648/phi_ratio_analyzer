@@ -1,0 +1,8 @@
+numpy
+opencv-python
+dlib
+scipy
+fastapi
+uvicorn[standard]
+python-multipart
+Pillow
