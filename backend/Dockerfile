@@ -12,7 +12,6 @@ RUN apt-get update && apt-get install -y \
     libgl1 \
     && rm -rf /var/lib/apt/lists/*
 
-.
 ENV CMAKE_BUILD_PARALLEL_LEVEL=1
 
 # 4. Copy requirements file
