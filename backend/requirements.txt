@@ -4,5 +4,4 @@ python-dotenv
 opencv-python
 numpy
 scipy
-dlib
 websockets
