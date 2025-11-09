@@ -1,8 +1,8 @@
-numpy
-opencv-python
-dlib
-scipy
 fastapi
 uvicorn[standard]
-python-multipart
-Pillow
+python-dotenv
+opencv-python
+numpy
+scipy
+dlib
+websockets

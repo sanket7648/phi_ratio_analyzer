@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
+# --- Import your modules ---
 try:
     from main.face_detector import get_landmarks, NoFaceFoundError, MultipleFacesFoundError
     from main.ratio_calculator import calculate_ratios
@@ -69,6 +69,20 @@ def process_and_annotate(image):
     except Exception as e:
         return None, None, f"An unexpected error occurred: {str(e)}"
 
+# =========================================
+# NEW: Keep-Alive / Health Check Endpoint
+# =========================================
+@app.get("/health")
+async def health_check():
+    """
+    A simple endpoint that can be pinged by an uptime service
+    to prevent the Render free tier from spinning down.
+    """
+    return {"status": "Server is healthy"}
+
+# =========================================
+# WebSocket Endpoint
+# =========================================
 @app.websocket("/ws/realtime-face")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
@@ -79,7 +93,6 @@ async def websocket_endpoint(websocket: WebSocket):
             if image is None: continue
 
             try:
-                # Fast landmark detection only
                 landmarks = get_landmarks(image)
                 await websocket.send_json({"landmarks": landmarks.tolist()})
             except:
