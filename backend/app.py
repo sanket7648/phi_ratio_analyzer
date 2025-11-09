@@ -74,7 +74,7 @@ def process_and_annotate(image):
 # =========================================
 # NEW: Keep-Alive / Health Check Endpoint
 # =========================================
-@app.get("/health", methods=["GET", "HEAD"])
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health_check():
     """
     A simple endpoint that can be pinged by an uptime service
