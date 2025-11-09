@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
     libgl1 \
+    python3-dlib \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
