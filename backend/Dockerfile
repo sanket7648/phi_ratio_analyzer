@@ -31,10 +31,10 @@ COPY . .
 
 # 8. Environment Variables for Render/Deployment
 ENV APP_HOST=0.0.0.0
-ENV APP_PORT=8000
+ENV APP_PORT=7860
 
 # 9. Expose port
 EXPOSE 8000
 
 # 10. Run the Application
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
