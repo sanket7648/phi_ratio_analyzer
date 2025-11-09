@@ -1,4 +1,3 @@
-
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -6,7 +5,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
-    libgl1-mesa-glx \
+    libgl1 \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
@@ -20,4 +19,4 @@ ENV APP_PORT=8000
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app:app", "--host", "$APP_HOST", "--port", "$APP_PORT"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "$PORT"]
