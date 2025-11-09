@@ -28,6 +28,7 @@ origins = [
     "http://localhost:3000",
     "http://localhost:5173",
     "http://localhost",
+    "https://phi-ratio-analyzer.onrender.com"
 ]
 
 app.add_middleware(
