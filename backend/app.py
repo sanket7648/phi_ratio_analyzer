@@ -28,7 +28,8 @@ origins = [
     "http://localhost:3000",
     "http://localhost:5173",
     "http://localhost",
-    "https://phi-ratio-analyzer.onrender.com"
+    "https://phi-ratio-analyzer.onrender.com",
+    "https://phi-ratio-analyzer.vercel.app"
 ]
 
 app.add_middleware(
