@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Upload, Video, X, Camera, Sparkles } from 'lucide-react';
 import ImageUpload from './components/ImageUpload';
 import WebcamAnalyzer from './components/WebcamAnalyzer';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [activeMode, setActiveMode] = useState<'none' | 'upload' | 'webcam'>('none');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <Analytics />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]" />
 
